@@ -1,9 +1,7 @@
 <?php
 require_once(__DIR__ . '/utils/redirect.php');
-require_once(__DIR__ . '/utils/Session.php');
-
-$session = Session::getInstance();
-if (!isset($_SESSION["formInputs"]['userId'])) redirect("/dao-sample/user/signin.php");
+session_start();
+if (!isset($_SESSION["formInputs"]['userId'])) redirect("/dao-sample-abstract/user/signin.php");
 ?>
 
 <!DOCTYPE html>
