@@ -1,15 +1,9 @@
 <?php
 require_once(__DIR__ . '/../dao/Dao.php');
 
-
 final class UserDao extends Dao
 {
 	const TABLE_NAME = 'users';
-
-	public function __construct()
-	{
-		parent::__construct();
-	}
 
 	public function create(string $userName, string $mail, string $password): void
 	{
@@ -37,6 +31,6 @@ final class UserDao extends Dao
 		$statement->execute();
 		$user = $statement->fetch(PDO::FETCH_ASSOC);
 
-		return ($user) ? $user : null;
+		return ($user === false) ? null : $user;
 	}
 }

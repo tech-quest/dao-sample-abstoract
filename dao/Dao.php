@@ -1,6 +1,5 @@
 <?php
 
-
 abstract class Dao
 {
 	const DB_USER = 'root';
@@ -10,7 +9,7 @@ abstract class Dao
 
 	protected $pdo;
 
-	protected function __construct()
+	public function __construct()
 	{
 		$pdoSetting = sprintf(
 			"mysql:host=%s; dbname=%s; charset=utf8mb4",
